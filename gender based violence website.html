@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeSpace - Home</title>
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #007bff;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      margin: 0;
+      z-index: 1;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin: 20px 0;
+      z-index: 1;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    #sosButton {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      z-index: 1;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    #sosButton:hover {
+      background-color: #ff1a1a;
+      transform: scale(1.2);
+    }
+
+    /* Sections */
+    .resources, .report, .education, .contact {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .resources h1, .report h1, .education h1, .contact h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+
+    .resource-list, .content-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .resource-item, .content-item {
+      background-color: white;
+      padding: 30px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resource-item:hover, .content-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .resource-item i, .content-item i {
+      font-size: 2.5em;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .resource-item h2, .content-item h2 {
+      font-size: 1.8em;
+      margin: 10px 0;
+    }
+
+    .resource-item p, .content-item p {
+      font-size: 1.1em;
+      color: #666;
+    }
+
+    .resource-item a, .content-item a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .resource-item a:hover, .content-item a:hover {
+      color: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      .resource-item, .content-item {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#report">Report</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="hero">
+      <h1>Welcome to SafeSpace</h1>
+      <p>Your safe place for support, resources, and help.</p>
+      <button id="sosButton">Emergency SOS</button>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+      <h1>Resource Directory</h1>
+      <div class="resource-list">
+        <div class="resource-item">
+          <i class="fas fa-home"></i>
+          <h2>Shelters</h2>
+          <p>Find safe places near you.</p>
+          <a href="#">View Shelters</a>
+        </div>
+        <div class="resource-item">
+          <i class="fas fa-comments"></i>
+          <h2>Counseling</h2>
+          <p>Get professional help.</p>
+          <a href="#">View Counseling Services</a>
+        </div>
+        <div class="resource-item">
+          <i class="fas fa-balance-scale"></i>
+          <h2>Legal Aid</h2>
+          <p>Know your rights and get legal support.</p>
+          <a href="#">View Legal Aid</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Report Section -->
+<section id="report" class="report-section">
+  <div class="report-container">
+    <h1 class="report-title">Anonymous Reporting</h1>
+    <p class="report-description">
+      Report incidents securely and anonymously. Your identity will remain confidential.
+    </p>
+
+    <form id="reportForm" class="report-form">
+      <!-- Incident Details -->
+      <div class="form-group">
+        <label for="incidentType" class="form-label">Incident Type*</label>
+        <select id="incidentType" name="incidentType" class="form-input" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="harassment">Harassment</option>
+          <option value="discrimination">Discrimination</option>
+          <option value="safety">Safety Concern</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="incidentDetails" class="form-label">Incident Details*</label>
+        <textarea 
+          id="incidentDetails" 
+          name="incidentDetails" 
+          class="form-textarea" 
+          placeholder="Provide a detailed description of the incident..." 
+          required
+        ></textarea>
+      </div>
+
+      <!-- Date & Time -->
+      <div class="form-group">
+        <label for="incidentDate" class="form-label">Date of Incident*</label>
+        <input type="date" id="incidentDate" name="incidentDate" class="form-input" required>
+      </div>
+
+      <!-- Evidence Upload -->
+      <div class="form-group">
+        <label for="evidence" class="form-label">Upload Evidence (Optional)</label>
+        <inpput 
+          type="file" 
+          id="evidence" 
+          name="evidence" 
+          class="form-file"
+          accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+        >
+        <small class="form-hint">Supports: PDF, JPG, PNG, DOC (Max 5MB)</small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-button">Submit Report Anonymously</button>
+
+      <!-- Privacy Assurance -->
+      <p class="privacy-notice">
+        <i class="fas fa-lock"></i> Your report is encrypted and confidential.
+      </p>
+    </form>
+  </div>
+</section>
+
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+      <h1>Educational Content</h1>
+      <div class="content-list">
+        <div class="content-item">
+          <i class="fas fa-book"></i>
+          <h2>What is GBV?</h2>
+          <p>Learn about gender-based violence and its impact.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="content-item">
+          <i class="fas fa-shield-alt"></i>
+          <h2>How to Stay Safe</h2>
+          <p>Tips for staying safe in dangerous situations.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="content-item">
+          <i class="fas fa-gavel"></i>
+          <h2>Legal Rights</h2>
+          <p>Know your legal rights and how to seek help.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h1 class="contact-title">Contact Us</h1>
+    <p class="contact-subtitle">
+      Have questions or need assistance? Reach out to us—we're here to help!
+    </p>
+
+    <form id="contactForm" class="contact-form">
+      <!-- Name and Email (2-column layout on desktop) -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name" class="form-label">Your Name*</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-input"
+            placeholder="John Doe"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email*</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="john@example.com"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Subject (full width) -->
+      <div class="form-group">
+        <label for="subject" class="form-label">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          class="form-input"
+          placeholder="How can we help?"
+        />
+      </div>
+
+      <!-- Message (full width) -->
+      <div class="form-group">
+        <label for="message" class="form-label">Message*</label>
+        <textarea
+          id="message"
+          name="message"
+          class="form-textarea"
+          placeholder="Your message here..."
+          rows="5"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Submit Button (centered) -->
+      <div class="form-submit">
+        <button type="submit" class="submit-button">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </div>
+
+      <!-- Privacy Note -->
+      <p class="privacy-note">
+        <i class="fas fa-lock"></i> Your information is secure and will not be shared.
+      </p>
+    </form>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 SafeSpace. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simulate SOS button
+    document.getElementById('sosButton').addEventListener('click', () => {
+      alert('Emergency alert sent! Help is on the way.');
+    });
+
+    // Handle form submissions
+    document.getElementById('reportForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your report. We will review it shortly.');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for contacting us. We will get back to you soon.');
+    });
+  </script>
+</body>
+</html>
